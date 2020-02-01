@@ -1,4 +1,4 @@
 # Programming Paradigms
 ## Object-oriented programming with Java
 
-## Practical 2: Collections
+## Practical 4: Abstract classes and interfaces

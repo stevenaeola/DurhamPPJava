@@ -1,0 +1,13 @@
+#BlueJ class context
+comment0.params=
+comment0.target=Pixel()
+comment0.text=\n\ Constructor\ for\ objects\ of\ class\ Pixel\n
+comment1.params=d
+comment1.target=Pixel(int)
+comment1.text=create\ from\ image\ data
+comment2.params=R\ G\ b
+comment2.target=Pixel(int,\ int,\ int)
+comment2.text=create\ from\ RGB,\ assume\ alpha\ 255
+comment3.params=
+comment3.target=int\ toRGB()
+numComments=4
