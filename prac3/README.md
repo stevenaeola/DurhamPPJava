@@ -54,11 +54,9 @@ they link together. All of these applications will require the use of lists.
 
 1. __Bank__ A bank has many accounts, each of which are associated with a
 person. The accounts should each have a unique account number, and
-remember a list of transactions. The transactions should contain details about
-the time and date, the amount of money, and the type of transaction, e.g.
-withdrawing or transferring money to another account.
+remember a list of transactions. 
 
-2. __Library__ Libraries have lots of books, and DVDs. They have a
+2. __Library__ Libraries have lots of books. They have a
 list of members that are associated with a person and each member has a
 limit on how many items they can borrow, along with a record of what they
 currently have out on loan and possibly their loan history. They should be able
@@ -102,9 +100,7 @@ printing value:
 
 1. The name of the oldest person (the first one, if more than one person shares the greatest age).
 2. The average (mean) age of the group.
-3. Write a method which creates the list of people, executes these methods and displays the result.
 4. A list of all people who are at least 18 years old.
-5. A list of everybody apart from the oldest person.
 6. The median age i.e. the middle age if people are put in order of age.
 For now you can assume that everybody has a different age. __Hint:__ you could use your answer to the previous part. Or, use the [sort method](https://docs.oracle.com/javase/7/docs/api/java/util/Collections.html#sort(java.util.List))
-7. The mode i.e. the most frequently occurring age.
+7. Write a main method which creates the list of people, executes these methods and displays the results.
