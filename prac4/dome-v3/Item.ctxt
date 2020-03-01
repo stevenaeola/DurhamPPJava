@@ -1,0 +1,22 @@
+#BlueJ class context
+comment0.target=Item
+comment0.text=\n\ The\ Item\ class\ represents\ a\ multi-media\ item.\n\ Information\ about\ the\ item\ is\ stored\ and\ can\ be\ retrieved.\n\ This\ class\ serves\ as\ a\ superclass\ for\ more\ specific\ itms.\n\ \n\ @author\ Michael\ Kolling\ and\ David\ J.\ Barnes\n\ @version\ 2008.03.30\n
+comment1.params=theTitle\ time
+comment1.target=Item(java.lang.String,\ int)
+comment1.text=\n\ Initialise\ the\ fields\ of\ the\ item.\n\ @param\ theTitle\ The\ title\ of\ this\ item.\n\ @param\ time\ The\ running\ time\ of\ this\ item.\n
+comment2.params=comment
+comment2.target=void\ setComment(java.lang.String)
+comment2.text=\n\ Enter\ a\ comment\ for\ this\ item.\n\ @param\ comment\ The\ comment\ to\ be\ entered.\n
+comment3.params=
+comment3.target=java.lang.String\ getComment()
+comment3.text=\n\ @return\ The\ comment\ for\ this\ item.\n
+comment4.params=ownIt
+comment4.target=void\ setOwn(boolean)
+comment4.text=\n\ Set\ the\ flag\ indicating\ whether\ we\ own\ this\ item.\n\ @param\ ownIt\ true\ if\ we\ own\ the\ item,\ false\ otherwise.\n
+comment5.params=
+comment5.target=boolean\ getOwn()
+comment5.text=\n\ @return\ true\ if\ we\ own\ a\ copy\ of\ this\ item.\n
+comment6.params=
+comment6.target=void\ print()
+comment6.text=\n\ Print\ details\ about\ this\ item\ to\ the\ text\ terminal.\n
+numComments=7
