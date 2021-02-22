@@ -11,7 +11,7 @@ In the lectures I use BlueJ, which is available on the CIS machines (inclluding 
 
 ### Playhing with Biogram
 
-1. Download the classes from github (unless you have already cloned the repo)
+1. Download the classes from [github](https://github.com/stevenaeola/DurhamPPJava/tree/master/prac1/BiogramExpressions) (unless you have already cloned the repo)
 
 1. Compile all the classes and construct a BioGram with parameters width=500, height=200
 
