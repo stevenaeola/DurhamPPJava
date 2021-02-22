@@ -1,51 +1,17 @@
 # Programming Paradigms
 ## Object-oriented programming with Java
 
-## Practical 4: Inheritance
-
-## Instructions
-
-This practical focuses on __inheritance__ and __class hierarchy__. You will need to download the [DoME-v3](dome-v3) example, which follows chapter 8 of the bluej book.
-
-### Part 1: DoME
-
-1. Adapt  the DoME example provided. 
-  * Update the `createDatabase` method to add some DVDs to the database
-  * Update the _DVD_ class so that the `print()` method works the same way as the _CD_ class `print()` method and test this by calling the _Database_ class `list()` method from `createDatabase`
-  * Write a class _VideoGame_ that can be added to the list of items in the database and test this works using the `list()` method.
-
-2. There is a flaw in the design of the DoME project. For example
-`playingTime` should not be used for for a video game. Change the design and implementation to
-solve this problem. If you see other problems make the necessary changes, you should justify your
-choices (note that `playingTime` should still be used for DVDs and CDs).
-
-### Part 2: Sale items
-
-1. A company sells a range of items. Customers make purchases via
-the company web site. The site provides descriptions of items and prices before and after VAT.
-Some items can only be purchased as a whole unit (such as a phone) whereas other items can be
-purchase as fraction of units (such as fabrics). All items on sale have a reference ID, a name, a description
-and a VAT value (percentage). Items such as phone have a price per unit, items such as fabrics have
-a price per unit and a unit measure (for example metre, or kg). 
- * Design and implement the classes _WholeItem_ for
-items such as phone, _FracItem_ for items such as fabrics and any other classes that may be needed.
- * Instance methods should be provided for obtaining the price before and after tax for a single unit, and for obtaining a printable _String_ representation.
+## Practical 4: Abstract classes and interfaces
 
 
-2. The company also sells second-hand items. Only _WholeItem_ objects
-can be sold as second-hand. Second-hand items can vary in condition. Each item is given a grade
-between 1 and 5. A grade one item is in as new condition. A grade 5 item is in poor condition,
-typically cosmetically damaged but working. The ex-VAT price of a second-hand item is based on
-the ex-VAT cost new. Depending on grade, a discount is applied.
+1. Adapt your class _SaleItem_ from the [previous practical](../prac3/) so that it is an abstract class. Include an abstract method _getPrexTaxPrice_ which is implemented in each of the concrete subclasses _FracItem_, _WholeItem_ and _SecondHandItem_. Use this method to implement the method _getPostTaxPrice_ in the _SaleItem_ class.
 
-| Grade | Discount|
-|-------|---------|
-| 1     | 10%     |
-| 2     | 20%     |
-| 3     | 30%     |
-| 4     | 50%     |
-| 5     | 70%     |
+2. Write a _compareTo_ method for the _SaleItem_ class, so that it implements the [Comparable interface](https://docs.oracle.com/javase/8/docs/api/java/lang/Comparable.html), comparing the post tax price.
 
- * Using your design from the previous part, design the _SecondHandItem_ class.
- * Design and implement a class _Basket_ that stores items selected by the customer. Instance methods should be provided for obtaining the price before and after tax of the content of the basket, and for obtaining a printable _String_ representation (for example one item per line).
+3. Use the _sort_ method from [java.util.Collections](https://docs.oracle.com/javase/8/docs/api/java/util/Collections.html) to sort a _Basket_ into order based on the post tax price of its constituents.
 
+4. There are two versions of the _sort_ method in [java.util.Collections](https://docs.oracle.com/javase/8/docs/api/java/util/Collections.html), the second of which takes a [Comparator](https://docs.oracle.com/javase/8/docs/api/java/util/Comparator.html) object as a parameter. Create an object which implements the _Comparator_ interface  from java.util to compare _SaleItem_ objects alphabetically by name, rather than by price. Use this _Comparator_ to sort a _Basket_ by name rather than by price. Note that there are two ways to do this:
+* Write a separate class _NameComparator_ which has only one method and no fields
+* Create an anonymous inner class, as shown in the lecture on GUIs.
+
+5. In your code you will most likely have used the _ArrayList_ class, which implements the _List_ interface. You could change _ArrayList_ to _LinkedList_ throughout, which would be worse for performance for reading large lists. Alternatively you could change some of your _ArrayList_ definitions to use _List_ interface instead. Where can you change _ArrayList_ to _List_ and why?

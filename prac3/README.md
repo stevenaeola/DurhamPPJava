@@ -1,106 +1,51 @@
 # Programming Paradigms
 ## Object-oriented programming with Java
 
-## Practical 3: Collections
+## Practical 3: Inheritance
 
-### Part 1: Designing a Person
+## Instructions
 
-One of the advantages of objects is the ability to encapsulate data specific to
-that object and then reuse it in multiple places. A good example of this is an
-object representing a person that can be used in many applications. Design a
-_Person_ class that could be used by many applications, thinking about the
-properties that are common to a person regardless of the application.
-When you are happy with your model, you can implement it, including fields, constructor, get and set methods.
+This practical focuses on __inheritance__ and __class hierarchy__. You will need to download the [DoME-v3](dome-v3) example, which follows chapter 8 of the bluej book.
 
-__Info:__ There are some special method signatures associated with all classes
-created in Java that we can write code for. One of these is a method to return
-a _String_ describing the current state of the object. The method signature for
-this is:
+### Part 1: DoME
 
-```java
-public String toString()
-```
+1. Adapt  the DoME example provided. 
+  * Update the `createDatabase` method to add some DVDs to the database
+  * Update the _DVD_ class so that the `print()` method works the same way as the _CD_ class `print()` method and test this by calling the _Database_ class `list()` method from `createDatabase`
+  * Write a class _VideoGame_ that can be added to the list of items in the database and test this works using the `list()` method.
 
-Like the constructor, this method is called automatically for us. In this case,
-the method is called when we want to print out an instance of the class. This
-method returns the _String_ that should describe the current state of the object.
-For example, if we had an instance of class _Person_ called `pip`, when we do
+2. There is a flaw in the design of the DoME project. For example
+`playingTime` should not be used for for a video game. Change the design and implementation to
+solve this problem. If you see other problems make the necessary changes, you should justify your
+choices (note that `playingTime` should still be used for DVDs and CDs).
 
-```java
-System.out.println(pip)
-```
+### Part 2: Sale items
 
-we want it to give something meaningful, such as their name and age. To do
-this, the `toString` method might look something like:
-
-```java
-public String toString(){
- return "My name is " + name + " and I am " + age +
-"years old." ;
-}
-```
-
-Add a `toString` method for your _Person_ class.
-
-### Part 2: Modelling an application
-
-Select one of the applications below to link your Person into, or choose one of your own (that involves people). An example of a
-possible class structure for the library application is shown below.
-
-![Library Class Structure](libraryClassStructure.png "Library Class Structure")
-
-When you have written your model, draw out the class diagrams to show how
-they link together. All of these applications will require the use of lists.
-
-1. __Bank__ A bank has many accounts, each of which are associated with a
-person. The accounts should each have a unique account number, and
-remember a list of transactions. 
-
-2. __Library__ Libraries have lots of books. They have a
-list of members that are associated with a person and each member has a
-limit on how many items they can borrow, along with a record of what they
-currently have out on loan and possibly their loan history. They should be able
-to print out due dates for each member.
-
-3. __Restaurant__ A restaurant will have a menu of items that people can order,
-along with tables around which people are sat. Each table will have orders
-associated with it and should be able to print a bill of all the items ordered and
-give the total cost. The items on the menu each have a price, description,
-whether they are vegetarian/ spicy and how much they cost.
-
-You should now be able to implement your model for each of the
-classes required using the _ArrayList_ data type.
-Remember, the `java.util.ArrayList` class needs to be imported
-to make use of _ArrayList_. A new _ArrayList_ can then be defined using:
-
-```java
-ArrayList<String> listname = new ArrayList<String>();
-```
-
-Where _String_ can be replaced with any _Object_ data type. Some useful
-methods that can be applied to lists are:
-
-* `size()`
-* `add(object)`
-* `get(int index)` 
-
-Details on these methods and others can be found on the Java API at:
-<http://docs.oracle.com/javase/8/docs/api/>
-
-Use the `for` loop to write a method to print out all of the people used in your model (e.g. all the customers in the bank).
+1. A company sells a range of items. Customers make purchases via
+the company web site. The site provides descriptions of items and prices before and after VAT.
+Some items can only be purchased as a whole unit (such as a phone) whereas other items can be
+purchase as fraction of units (such as fabrics). All items on sale have a reference ID, a name, a description
+and a VAT value (percentage). Items such as phone have a price per unit, items such as fabrics have
+a price per unit and a unit measure (for example metre, or kg). 
+ * Design and implement the classes _WholeItem_ for
+items such as phone, _FracItem_ for items such as fabrics and any other classes that may be needed.
+ * Instance methods should be provided for obtaining the price before and after tax for a single unit, and for obtaining a printable _String_ representation.
 
 
-### Part 3: A List of People
+2. The company also sells second-hand items. Only _WholeItem_ objects
+can be sold as second-hand. Second-hand items can vary in condition. Each item is given a grade
+between 1 and 5. A grade one item is in as new condition. A grade 5 item is in poor condition,
+typically cosmetically damaged but working. The ex-VAT price of a second-hand item is based on
+the ex-VAT cost new. Depending on grade, a discount is applied.
 
-Now you have a class which includes a list of people (an
-`ArrayList<Person>` to be precise). Make sure you have `getAge()`
-and `getName()` methods in your _Person_ class. Then write methods
-to find the following, making sure you return a value rather than
-printing value:
+| Grade | Discount|
+|-------|---------|
+| 1     | 10%     |
+| 2     | 20%     |
+| 3     | 30%     |
+| 4     | 50%     |
+| 5     | 70%     |
 
-1. The name of the oldest person (the first one, if more than one person shares the greatest age).
-2. The average (mean) age of the group.
-4. A list of all people who are at least 18 years old.
-6. The median age i.e. the middle age if people are put in order of age.
-For now you can assume that everybody has a different age. __Hint:__ you could use your answer to the previous part. Or, use the [sort method](https://docs.oracle.com/javase/7/docs/api/java/util/Collections.html#sort(java.util.List))
-7. Write a main method which creates the list of people, executes these methods and displays the results.
+ * Using your design from the previous part, design the _SecondHandItem_ class.
+ * Design and implement a class _Basket_ that stores items selected by the customer. Instance methods should be provided for obtaining the price before and after tax of the content of the basket, and for obtaining a printable _String_ representation (for example one item per line).
+

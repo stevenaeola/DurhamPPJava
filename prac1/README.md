@@ -3,15 +3,31 @@
 
 ## Practical 1
 
-### Instructions
+### Instructions: IDE
 
-BlueJ is available on the CIS machines in the laboratories and you can also install it on your own machines by downloading it from 
+In the lectures I use BlueJ, which is available on the CIS machines (inclluding AppsAnywhere) and you can also install it on your own machines by downloading it from 
 
 <http://www.bluej.org>.
 
+### Playhing with Biogram
+
+1. Download the classes from github (unless you have already cloned the repo)
+
+1. Compile all the classes and construct a BioGram with parameters width=500, height=200
+
+2. Admire the pretty pattern
+
+3. Adapt the CountExpr class to make your own ways of stepping and finishing: try changing the values of the constants and the mathematical functions used
+
+4. You will need to re-compile CountExpr and BioGram (why?) to run your own example
+
+5. Come up with your own CountExpr class. Basically this means rewriting the methods from scratch rather than tnikering with them. You might also add some other fields which are used. The produced Biogram should look good, or perhaps be generated in some artistic way.
+
+6. Have a look at the Pixel class and see if you can work out what it's doing. To understand this you will need a knowledge of binary, so miss this out if you don't already know about binary.
+
 ### Scenario: Botanic Gardens
 
-_Read through the scenario and think about the design first. Afterwards you will implement the classes in python, JavaScript (optionally) and Java._
+_Read through the scenario and think about the design first. Afterwards you will implement the classes in Java._
 
 The University Botanic Gardens need a computer system for maintaining
 information on stocks of flower seeds and plantings. They will use the system
@@ -54,19 +70,9 @@ comprises a certain quantity of a particular species of flowering plant. The
 date of planting is required so the date for the first blooms can be estimated.
 See what you can figure for fields and methods. 
 
-## Implementation
+### Implementation
 
-### python
-
-Using whichever IDE you prefer, write python classes to implement the botanic garden. If you don't know the syntax, check it out in the [python documentation](https://docs.python.org/3/tutorial/classes.html).
-
-### JavaScript
-
-If you are familiar with JavaScript (i.e. you took Programming last year) then come up with a set of JavaScript class definitions for the same example
-
-### Java
-
-Finally, produce a corresponding set of Java classes. Again, you can choose whichever IDE you want. Visual Studio Code is a possibility, but requires a [Java plugin](https://code.visualstudio.com/docs/java/java-tutorial) to be installed to make this work well. This may or may not work on CIS machines. Eclipse is a large and powerful professional-grade IDE often used with Java and other languages, and is installed on CIS machines, but is quite heavyweight. NetBeans and IntelliJ are also popular. If you want 'simple' go with bluej.
+Produce a corresponding set of Java classes. You can choose whichever IDE you want. Visual Studio Code is a possibility, but requires a [Java plugin](https://code.visualstudio.com/docs/java/java-tutorial) to be installed to make this work well. This may or may not work on CIS machines. Eclipse is a large and powerful professional-grade IDE often used with Java and other languages, and is installed on CIS machines, but is quite heavyweight. NetBeans and IntelliJ are also popular. If you want 'simple' go with bluej.
 
 Remember:
 
